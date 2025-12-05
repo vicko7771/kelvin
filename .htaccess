@@ -1,0 +1,19 @@
+# Desabilita redirecionamento automático para HTTPS no payments.php
+# Se necessário, remova estas linhas
+
+<Files "payments.php">
+    # Permite requisições POST sem redirecionamento
+    RewriteEngine Off
+</Files>
+
+<Files "verificar-status.php">
+    # Permite requisições sem redirecionamento
+    RewriteEngine Off
+</Files>
+
+# Headers CORS
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "POST, GET, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>

@@ -2,22 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "production/payments.php",
-      "use": "@vercel/php"
-    },
-    {
-      "src": "production/test_xtracky.php",
-      "use": "@vercel/php"
+      "src": "api/production/payments.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/production/payments.php",
-      "dest": "production/payments.php"
+      "src": "/production/payments.js",
+      "dest": "api/production/payments.js"
     },
     {
-      "src": "/production/(.*)",
-      "dest": "production/payments.php"
+      "src": "/production/payments",
+      "dest": "api/production/payments.js"
     }
   ]
 }
